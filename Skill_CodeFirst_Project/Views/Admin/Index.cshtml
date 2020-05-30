@@ -1,0 +1,28 @@
+﻿@using Skill_CodeFirst_Project.Models.siniflar
+@model List<Yetenekler>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>ID</th>
+        <th>YETENEK</th>
+        <th>DEĞER</th>
+        <th>Sil</th>
+      
+    </tr>
+    
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Aciklama</td>
+            <td>@x.Deger</td>
+        <td><a href="/Admin/YetenekSil/@x.Id" class="btn btn-danger">Sil</a></td>
+        </tr>
+            }
+        
+    </table>
